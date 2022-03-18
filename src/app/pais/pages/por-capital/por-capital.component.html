@@ -5,23 +5,24 @@
     <div class="col">
         <app-pais-input
             (onEnter)='buscar($event)'
+            pleaceholder='Buscar por capital'
             (onDebounce)='sugerencias($event)'
         ></app-pais-input>
     </div>
 </div>
 <hr>
-<div 
+<div
     *ngIf="errorExiste"
     class="alert alert-danger">
     No se encontraron resultados para {{termino}}
 </div>
 
 <div class="row" *ngIf="paises.length >0">
-   
+
 
     <div class="col">
         <app-pais-tabla [paises]='paises'></app-pais-tabla>
-        
+
     </div>
 </div>
 
